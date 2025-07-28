@@ -25,7 +25,6 @@ def predict():
     filepath = os.path.join('uploads', f.filename)
     f.save(filepath)
     
-    # CORRECTION: 128x128 au lieu de 224x224
     img = image.load_img(filepath, target_size=(128, 128))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0) / 255.0
